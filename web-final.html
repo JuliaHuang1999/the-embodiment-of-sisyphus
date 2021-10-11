@@ -1,0 +1,771 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css-final/web-final.css">
+
+
+    <style>
+        #nav {
+            top: 0px;
+            right: 0vh;
+            width: 6vw;
+         padding-right: 7vw;
+        }
+
+        #nav a {
+            height: 20vh;
+            width: 8vw;
+            background-color: rgba(32, 43, 56, 0.8);
+            border: none;
+            color: #FCECC6;
+        }
+
+        #nav a.active {
+            background-color: rgba(255, 255, 255, 0.8);
+            color: #202338;
+            width: 8vw;
+            height: 20vh;
+        }
+
+        #nav a:hover {
+            color: #D2AF59;
+            background-color: white;
+            width: 8vw;
+            padding-right: 20vw;
+            height: 20vh;
+        }
+
+        #ch-title {
+            height: 20vh;
+            color: aliceblue;
+            font-family: Georgia;
+            text-shadow: black 0.1em 0.1em 0.2em;
+            padding-top: 15%;
+        }
+
+
+        .intro-img {
+/*            position: sticky;*/
+/*            height: 100%;*/
+            width: 100%;
+            object-fit: cover;
+            opacity: 1;
+            position:absolute;
+            
+        }
+
+
+        #ch1-content {
+            color: aliceblue;
+            padding: 10% 10%;
+            background-color: rgba(242, 242, 242, 0.1);
+            box-shadow: 1px 1px 8px black;
+        }
+
+        #chapter1 {
+            background: linear-gradient(#252627, #2D384E);
+            background: linear-gradient(to bottom, #252627, #2D384E);
+            background: linear-gradient(180deg, #252627, #2D384E);
+            background: linear-gradient(to top, #2D384E, #252627);
+            background: linear-gradient(to bottom, #252627 0%, #2D384E 100%);
+
+
+        }
+
+        div.sticky {
+            position: -webkit-sticky;
+            position: sticky;
+            top: 5vh;
+        }
+
+
+        #story-img {
+            background-size: cover;
+            background-repeat: no-repeat;
+
+        }
+
+
+        #st-title {
+            height: 20vh;
+            color: aliceblue;
+            font-family: Georgia;
+            text-shadow: black 0.1em 0.1em 0.2em;
+            padding-top: 3%;
+            padding-left: 6%;
+
+        }
+
+        #ch2-content-panel {
+            background-color: rgba(237, 238, 243, 0.6);
+            box-shadow: 2px 2px 10px #1D2D43;
+            color: black;
+            float: left;
+            font-family: Georgia;
+    font-size: 18px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 540;
+    line-height: 26.8px;
+        }
+
+        #chapter2-end {
+            height: 200vh;
+            color: aliceblue;
+            background: linear-gradient(black, #3B445A);
+            background: linear-gradient(to bottom, black, #3B445A);
+            background: linear-gradient(180deg, black, #3B445A);
+            background: linear-gradient(to top, #3B445A, black);
+            background: linear-gradient(to bottom, black 0%, #3B445A 100%);
+
+        }
+
+        #chapter3 {
+            background: linear-gradient(#394053, #474C5B);
+            background: linear-gradient(to bottom, #394053, #474C5B);
+            background: linear-gradient(180deg, #394053, #474C5B);
+            background: linear-gradient(to top, #474C5B, #394053);
+            background: linear-gradient(to bottom, #394053 0%, #474C5B 100%);
+        }
+
+        #ch3-content {
+            padding: 5% 15%;
+            color: white;
+            margin-top: 10%;
+            font-family: Georgia; font-size: 20px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 32px;
+        }
+
+        #chapter4 {
+            background: linear-gradient(#464D5D, #464D5D);
+            background: linear-gradient(to bottom, #464D5D, #252627);
+            background: linear-gradient(180deg, #464D5D, #252627);
+            background: linear-gradient(to top, #464D5D, #464D5D);
+            background: linear-gradient(to bottom, #464D5D 0%, #252627 100%);
+        }
+
+        .slideanimate {
+            visibility: hidden;
+        }
+
+        .slide {
+            animation-name: slide;
+            -webkit-animation-name: slide;
+            animation-duration: 1s;
+            -webkit-animation-duration: 1s;
+            visibility: visible;
+        }
+
+        @keyframes slide {
+            0% {
+                opacity: 0;
+                transform: translateY(70%);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0%);
+            }
+        }
+
+        @-webkit-keyframes slide {
+            0% {
+                opacity: 0;
+                -webkit-transform: translateY(70%);
+            }
+
+            100% {
+                opacity: 1;
+                -webkit-transform: translateY(0%);
+            }
+        }
+    </style>
+
+    <title>The embodiment of Sisyphus: The disabled peddlers cursed by the social structure</title>
+</head>
+
+<body data-spy="scroll" data-target="#nav" data-offset="0">
+    <!-- 置右的navbar選單-->
+    <div id="nav" class="list-group" style="position:fixed">
+        <a class="list-group-item list-group-item-action" href="#intro">Intro</a>
+        <a class="list-group-item list-group-item-action" href="#chapter1">A Day of Street Peddling</a>
+        <a class="list-group-item list-group-item-action" href="#chapter2">About Mr. Chiu</a>
+        <a class="list-group-item list-group-item-action" href="#chapter3">Insight through Data</a>
+        <a class="list-group-item list-group-item-action" href="#chapter4">The Structural Prison</a>
+    </div>
+    <div data-spy="scroll" data-target="#nav" data-offset="0">
+        <!-- opening 首頁主視覺 -->
+        <div id="opening" class="jumbotron jumbotron-fluid text-center" style="background-image: url(asset-final/opening-1.jpg); background-color: #1D2D43; background-size: cover; height: 120vh; padding-right:4%;">
+            <div class="container" style="padding-right: 7vw">
+                <p class="display-4" style="font-family:Georgia;font-variant:inherit;font-weight: 700; padding-top: 230px; text-align: center;padding-left:4vw;  padding-bottom: 40px; color: aliceblue; text-shadow: black 0.1em 0.1em 0.2em">The embodiment of Sisyphus</p>
+            
+                <h3 class="display-4" style="font-family:Georgia; font-style: italic;font-size: 40px; padding-top: 0vh; text-align: center;padding-left:4vw; padding-bottom: 40px;color: aliceblue; text-shadow: black 0.1em 0.1em 0.2em"><strong>The disabled peddlers cursed by the social structure</strong></h3>
+            <br>
+                <p class="lead" style="font-family:Georgia;padding-top: : 40px; text-align: center; padding-left:4vw;color: aliceblue">The labor rights of the disabled peddlers in Taiwan have long been overlooked, <br>and a veritable barrier-free society is far out of reach.</p>
+                <br>
+                <p style="font-family:sans-serif;text-align: center; color: aliceblue;padding-left:4vw;">Shih-Min Huang, Chen-Yu Yang, and Pin-Ju Chen</p>
+            </div>
+        </div>
+        <!-- 引言 -->
+        <div id="intro" style="height:300vh; background-color: #252627">
+            <div class="sticky-top" style="">
+                <img src="asset-final/intro1.jpg" class="opa intro-img" data-seq=2 style="z-index:999;">
+                <img src="asset-final/intro2.jpg" class="opa intro-img" data-seq=3 style="z-index:998;">
+                <img src="asset-final/intro3.jpg" class="opa intro-img" data-seq=4 style="z-index:997;">
+            </div>
+        </div>
+
+        <!-- chapter1 街賣的一天 -->
+        <div id="chapter1" class="container-fluid" style="background-color: #313E57; min-height: 400vh;padding-right: 7vw">
+            <div style="height: 120vh;"></div>
+            <div id="ch-title" class="text-center" style="padding-top: 5%">
+                <h1><strong>A Day of Street Peddling</strong></h1>
+            </div>
+            <div style="float: right">
+                <img src="asset-final/logo.png" style="width: 40%; margin-top: 4%; margin-left: 30%">
+            </div>
+            <div>
+                <h5 class="text-center" style="color: aliceblue; padding: 5% 10%; min-width: 100%">騎電動輪椅到板橋，再轉車搭到景安或永安市場，有時候也會到府中在轉車。</h5>
+            </div>
+            <div class="row text-center" style="padding-left: 5%;padding-right: 5%; padding-top: 5%; padding-bottom: 5%;">
+
+                <div class="col-sm-4" style="">
+                    <div id="ch1-content">
+                        <h5>著裝、準備街賣商品</h5>
+                        <p>12:00離開浮洲協會</p>
+                    </div>
+                </div>
+                <div class="col-sm-4" style=")">
+                    <div id="ch1-content">
+                        <h5>15:30 Break for an hour</h5>
+                        <p>17:00後下班人潮聚集</p>
+
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <!--<div class="col-sm-4" style="background-color: rgba(49, 62, 87, 0.3)"> -->
+                    <div id="ch1-content">
+                        <h5>人潮散去收拾商品</h5>
+                        <p>20:00後回浮洲協會</p>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="padding-left: 5%;padding-right: 5%; padding-bottom: 15%">
+                <div id="img" class="col-sm-4 slideanimate">
+                    <!-- style="background-color: #F7DB98;" -->
+                    <img src="asset-final/day1.JPG" class="img-fluid slideanimate" alt="Responsive image" style="width:100%; box-shadow: 2px 2px 10px #1D2D43;">
+                </div>
+                <div id="img" class="col-sm-4 slideanimate">
+                    <img src="asset-final/day3.JPG" class="img-fluid slideanimate" alt="Responsive image" style="width:100%; box-shadow: 2px 2px 10px #1D2D43;">
+                </div>
+                <div id="img" class="col-sm-4 slideanimate">
+                    <img src="asset-final/day4.JPG" class="img-fluid slideanimate" alt="Responsive image" style="width:100%; box-shadow: 2px 2px 10px #1D2D43;">
+                </div>
+            </div>
+            <div class="row" style="padding: 5% 5%">
+                <div id="img" class="col-sm-6 slideanimate" style="padding-top: 0%">
+                    <img src="asset-final/day2.JPG" class="img-fluid slideanimate" alt="Responsive image" style="width:100%; box-shadow: 2px 2px 10px #1D2D43;">
+                </div>
+                <div class="col-sm-6" style="\">
+                    <div id="ch1-content-2" style="color: aliceblue;padding: 5% 10%;background-color: rgba(242, 242, 242, 0.1);box-shadow: 2px 2px 10px black;">
+                        <h3>街賣過程</h3>
+                        <p style="padding-top: 10%">偶爾會遇到常來買的熟客，但有時也有不友善的眼光，甚至是歧視的攻擊。有一次在捷運出口旁街賣，突然有個人跑過來對他大罵：「就是因為你在這邊賣所以才會身障啦！」讓邱大哥又是憤怒又是受傷。</p>
+                        <p>輪椅街賣的工作不僅要鼓足勇氣，更要強大的心理素質，因為隨時都可能遭遇來自陌生人的惡意。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- chapter2關於邱大哥 -->
+        <!-- 這邊開始是橫向捲軸ㄉ部分！ -->
+        <div id="chapter2" class="container-fluid" style="min-height: 1000vh;">
+            <!-- 橫向捲軸部分的進度條！ -->
+            <div class="container-fluid sticky-top" style="background-color: #202338; min-height: 5vh;">
+                <div id="statusbar" style="position: absolute; left: 0; height: 5vh; width: 0; background-color: #EFB841;"></div>
+            </div>
+            <!-- 橫向捲軸部分的橫頁內容！ -->
+            <div class="sticky">
+                <div id="horizontal" style="height: 95vh; width: 1200vw; position: absolute; top: 0px; left: -192.541px;">
+                    <div class="row">
+                        <div id="story-img" class="col-1" style="height:100vh; background-color: #122A41; background-image: url(asset-final/story.1.jpg)">
+                            <div id="st-title" style="">
+                                <h1><strong>About Mr. Chiu</strong></h1>
+                            </div>
+                            <div id="ch2-content-panel" class="panel panel-default" style="color: black; margin-top:5vh; margin-left: 2vw; width: 34vw; padding: 5vh 5vh">
+                                <p>
+                                    <br>Dressed in a cool black leather jacket, Mr. Chiu’s short grey hair, pronounced facial features and his eloquence were the unforgettable first impressions we had of him. <br><br>Having a pair of glaring eyes, Mr. Chiu remained calm, poised, perceptive and astute during the conversation, from which we could easily imagine the ups and downs he had walked through.
+                            
+                                </p>
+                            </div>
+                            <div id="ch2-content-panel" class="panel panel-default" style="color: black; margin-top:30vh; margin-left: 35vh; width: 40vw; padding: 3vh 3vh">
+                                <p>
+                                    <br>Born in the 60s in Chiayi County, Mr. Chiu has run the whole gamut of human experience. He solely trekked to Taipei at the young age of 15 and had to work his way through school. His “first pot of gold” was quickly amassed in two years with his hard work. Then, he started his own business and even spreaded investment in mainland China a couple years ago.
+                                    <br>
+                                    <br>However, he failed to seek medical treatment for the thoracic infection in time six years ago, which led to <strong style=" background: rgba(239, 184, 65, 0.5)">forever lower body paralysis</strong> after an operation.
+                                </p>
+                            </div>
+                        </div>
+                        <div id="story-img" class="col-1" style="height:100vh; background-color: #122A41; background-image: url(asset-final/story2.jpg)">
+                            <div id="st-title">
+                                <h1><strong>The day the world collapsed</strong></h1>
+                            </div>
+
+                            <div id="ch2-content-panel" class="panel panel-default" style="color: black; margin-top:0vh; margin-left: 40vh; width: 59vw; padding: 5vh 5vh">
+                                <p>
+                                    <br>After an emergency surgery, he regained consciousness only to discover the dawning and heartbreaking fact: he’d lost control of his lower body. Plunged into a state of despair, he could hardly check the impulse and swallowed 60 sleeping pills to end his life. Luckily, someone found him in time and Mr. Chiu was given a second chance to live.<br>
+                                    <br>“When I woke up, the first sentence I uttered was <strong style=" background: rgba(239, 184, 65, 0.5)">‘Why am I still alive? Why did I have to be saved?’</strong>A social worker comforted me with a bunch of cliche saying but I told him: ‘About the thing you said, I got it. But you’ll never relate to the feeling of waking up the next day to find out you are completely paralyzed and could never walk again’, ” said Mr. Chiu. 
+<br>
+                                    <br>“I wanted to buy some stuff from the convenience store. A big-hearted girl tried to help me with my wheelchair but I didn’t know my right foot had been scraped the entire way,” described Mr. Chiu with a wry smile, recalling the day he recently got discharged from the hospital. “Only when I saw a puddle of blood on the floor, which had the clerk freaked out, did I realize my toe had been scratched so deep that even the bone was visible,” continued Mr. Chiu.
+                                </p>
+                            </div>
+                        </div>
+                        <div id="story-img" class="col-1" style="height:100vh; background-color: #5E687E; background-image: url(asset-final/story3.jpg)">
+                            <div id="st-title">
+                                <h1><strong>Hitting the wall in search for job </strong></h1>
+                            </div>
+                            <div id="ch2-content-panel" class="panel panel-default" style="color: black; margin-top:-8vh; margin-left: 50vw; width: 44vw; padding: 4vh 4vh">
+                                <p>
+                                    <br>In the early days, Mr. Chiu depended heavily on other’s help for basically everything so he ended up in a costly nursing home for two years. The astronomical expenses soon depleted all his savings. He was then transferred to a nursing home that he was referred to by the Social Welfare Bureau in Sanchong District for the next three years. <br>
+                                    <br>Although he was spared the expensive charge for the nursing home due to his referral by the Social Welfare Bureau, Mr. Chiu was unqualified for the subsidies for the low-income and disabled residents. He could only receive 5000 NTD of severe disability subsidy thanks to his recent operation. Yet, he was downgraded to “moderate” on his disability status after a year and therefore, he could no longer be subsidized.<br>
+                                    <br>At the end of last year, Mr. Chiu discovered a place that helped match the disabled with suitable job opportunities on the Internet. Later, he was referred to a shelter factory for the physically and mentally challenged people. Not only was the shelter a house mainly for the mentally challenged, it was also a 
+“disabled-unfriendly” environment where no barrier-free facilities were built. <strong style=" background: rgba(239, 184, 65, 0.5)">“It was impossible for wheelchair users like me to reach the main entrance because of the front door steps.”</strong>
+                                </p>
+                            </div>
+                        </div>
+                        <div id="story-img" class="col-1" style="height:100vh; background-color: #5E687E; background-image: url(asset-final/story4.jpg)">
+                            <div id="ch2-content-panel" class="panel panel-default" style="color: black; margin-top:10vh; margin-left: 20vh; width: 40vw; padding: 5vh 5vh">
+                                <p>
+                                    <br>He once went to a foundation that guided independent work for the disabilities in Taoyuan. Sadly, Mr. Chiu had no other option but to turn down the chance of working there because he had to take the bus from Taipei to Taoyuan every day, costing him at least 700 NTD a day. Back then, Mr. Chiu could barely afford his phone bill, let alone the additional commute expenditure. 
+<br>
+                                    <br>Soon, Mr. Chiu came across the Hsinchulun Association, a foundation that assists people with disabilities to become self-sufficient by street peddling and also offers him accommodations he was in critical need. Seeing Mr. Chiu’s hand festooned with thick callus from propelling his wheelchair, the Association gifted him an electric wheelchair, rendering his movement more at ease.
+                                </p>
+                            </div>
+                        </div>
+                        <div id="story-img" class="col-1" style="height:100vh; background-color: #AFCBF1;background-image: url(asset-final/story5.jpg)">
+                            <div id="st-title">
+                                <h1><strong>Wheelchairing on the street </strong></h1>
+                            </div>
+                            <div id="ch2-content-panel" class="panel panel-default" style="color: black; margin-top:17vh; margin-left: 48vw; width: 49vw; padding: 3vh 4vh">
+                                <p>
+                                    <br>“At first, I was barely getting by because street peddling was too different from my pre-wheelchair-bound life,” acknowledged Mr. Chiu.  <br>
+                                    <br>To peddle goods and face strangers on the street alone, Mr. Chiu had to readjust his mindset and attitude. “I was nothing but a physically challenged person. I’ve changed, specifically my mentality, a lot throughout the years. If I didn’t change how I view the world, I could never start peddling,” Mr. Chiu revealed.  
+<br>
+                                    <br>However, people often cast surly glances at him. “At times, I would wonder where did these discriminatory looks come from. In the past, some perfectly healthy people would scam the public by faking their disabilities. Maybe they’ve fallen into those traps before so they lump me together with them.  <strong style=" background: rgba(239, 184, 65, 0.5)">In fact, they have no idea about those who are truly challenged</strong>,”sighed Mr. Chiu.
+                                </p>
+                            </div>
+                        </div>
+                        <div id="story-img" class="col-1" style="height:100vh; background-color: #AFCBF1;background-image: url(asset-final/story6.jpg)">
+                            <div id="ch2-content-panel" class="panel panel-default" style="color: black; margin-top:7vh; margin-left: 53vw; width: 42vw; padding: 2vh 3vh">
+                                <p>
+                                    <br>“Tons of people would not buy stuff from me until they were sure that my legs were legit paralyzed,” disclosed Mr. Chiu. Pointing at the placard hanging in front of his wheelchair he continued to say, “That’s why I wrote this. I want to clear the air.”
+                                    <br>
+                                    <br>Going on streets to peddle is a means of being independent but getting other’s pity looks and compassion is the inseparable byproduct. “For what it’s worth, I want to put food on the table on my own. I don’t need people’s sympathy,” asserted Mr. Chiu. He also mentioned that he happened upon his old friend while peddling but was treated with an empathetic look and attitude. “That felt downright uncomfortable. I don’t need that. I can make bucks by peddling and carry on with my life. Before I pull my life back together, I will not seek help from anyone. <strong style=" background: rgba(239, 184, 65, 0.5)">Perhaps I haven’t fully gotten over this whole thing</strong>,” Mr. Chiu expressed.
+                                    <br>
+                                    <br>Mr. Chiu works around 8 hours a day on the streets with a 1-hour break in between. For a disabled person, long hours of work can be physically laborious. He described: “Peddling for 8 hours straight really whacks me out, especially with my spine injury and poor blood circulation in the lower half of my body. Thankfully, my arms are strong enough to prop my body up during break time to improve blood circulation.”
+                                </p>
+                            </div>
+                        </div>
+                        <div id="story-img" class="col-1" style="height:100vh; background-color: #DFCF9D; background-image: url(asset-final/story7.jpg)">
+                            <div id="st-title">
+                                <h1><strong>Hopes for a barrier-free city</strong></h1>
+                            </div>
+
+                            <div id="ch2-content-panel" class="panel panel-default" style="color: black; margin-top:-2vh; margin-left: 6vw; width: 43vw; padding: 4vh 4vh">
+                                <p>
+                                    <br>When asked about how to soup up the current regulations, policies and welfare system, Mr. Chiu deemed that issues can be divided into two categories based on different targets.
+                                    <br>
+                                    <br>“First of all, lots of physically challenged people have severe conditions who can’t live on their own or are even unconscious. I think the government hasn’t been doing good enough to take care of this group of people since looking after them can be a heavy burden for their family members, mentally, physically and financially speaking.  <br><strong style=" background: rgba(239, 184, 65, 0.5)">If the government hands out an extra amount of subsidy, these families will see it as a hope to grasp on and keep going on</strong>,”suggested Mr. Chiu.
+                                    <br>
+                                    <br>“Secondly, for those clear-headed disabled like me, barrier-free facilities are what matters the most. <strong style=" background: rgba(239, 184, 65, 0.5)">Public areas should provide more barrier-free facilities.</strong> Just take me as an example. The shelter factory I was willing to work for had no facilities, leaving me no choice but to bail out,” Mr. Chiu mentioned.
+                                </p>
+                            </div>
+                        </div>
+                        <div id="story-img" class="col-1" style="height:100vh; background-color: #DFCF9D; background-image: url(asset-final/story8.jpg)">
+                            <div id="ch2-content-panel" class="panel panel-default" style="color: black; margin-top:13vh; margin-left: 10vh; width: 40vw; padding: 5vh 5vh">
+                                <p>
+                                    <br>According to the Person with Disabilities Rights Protection Act, government and private agencies at all levels are required to hire a certain proportion of the disabled. 
+<br><strong style=" background: rgba(239, 184, 65, 0.5)">Unfortunately, in reality, many corporations and agencies rather pay the difference subsidies to the Disabled Employment Funds than recruit challenged employees.</strong>。
+                                    <br>
+                                    <br>“From employers’ point of view, hiring people with disabilities does no good to the company. Businesses are essentially profit-oriented, so it makes no sense to pay the disabled workers while taking care of them at the same time,” admitted Mr. Chiu.<br><br> He couldn’t help but let out a huge sigh when speaking of the predicament of the working conditions for people with disabilities. He exhaled and uttered, “Even if the company opens up to hire us, it is impossible for spine injured patients like me who bank on wheelchairs to work for them if there’s no barrier-free facility.”
+                                </p>
+                            </div>
+                        </div>
+                        <div id="story-img" class="col-1" style="height:100vh; background-color: #D58F3F; background-image: url(asset-final/story9.jpg)">
+                            <div id="st-title">
+                                <h1><strong>Solicitude of the daughter who Mr. Chiu hasn’t met for a decade
+</strong></h1>
+                            </div>
+                            <div id="ch2-content-panel" class="panel panel-default" style="color: black; margin-top:20vh; margin-left: 100vh; width: 40vw; padding: 5vh 5vh">
+                                <p>
+                                    <br>“Street peddling, I don’t see why not,” Mr. Chiu cocked his head and continued to speak slowly, “My leisure in everyday life is to chat with my daughter after work. I’m grateful that my daughter is willing to communicate with me now, which is much better than what she used to do—leave me on the read.”
+                            </div>
+                        </div>
+                        <div id="story-img" class="col-1" style="height:100vh; background-color: #D58F3F; background-image: url(asset-final/story10.jpg)">
+                            <div style="color: aliceblue; padding-top: 40vh; padding-left: 20vh; width: 30vw">
+                                <div id="ch2-content-panel" class="panel panel-default" style="color: black; margin-top:-20vh; margin-left: 70vh; width: 40vw; padding: 5vh 5vh">
+                                    <p>
+                                        <br>Due to various reasons, he had lost contact with his daughter for years and finally got in touch with her via a communication app this year. Mr. Chiu lightened up, eyes smiling, when speaking of her daughter who talked more frequently with him through LINE; struck by biting wind, his eyes glistened with tears and etched with crow’s feet. 
+                                        <br>
+                                        <br>All he wanted to know is how his daughter was doing. <strong style=" background: rgba(239, 184, 65, 0.5)">“Every father would give the world to his daughter to live a happy life. I was gratified to know she was in a good place,”</strong>marked Mr. Chiu with a faint smile.
+                                </div>
+                            </div>
+                        </div>
+                        <div id="story-img" class="col-1" style="height:100vh; background-color: #B58E59; background-image: url(asset-final/story11.jpg)">
+                            <div id="st-title">
+                                <h1><strong>If grant with three wishes</strong></h1>
+                            </div>
+
+                            <div id="ch2-content-panel" class="panel panel-default" style="color: black; margin-top:10vh; margin-left: 15vh; width: 38vw; padding: 5vh 5vh">
+                                <p>
+                                    <br>As our interview drew to a close, we asked Mr. Chiu some questions: If he was given three wishes, what would he do? What would he be like in five years? <br><br>“Hmm…,” Mr. Chiu was stumped. Closing his eyes and leaning back on the wheelchair, he was mired in silent contemplation for a while. When he opened his eyes, piercing, we saw determination in him. 
+                            </div>
+                        </div>
+                        <div id="story-img" class="col-1" style="height:100vh; background-color: #B58E59; background-image: url(asset-final/story12.jpg)">
+                            <div id="ch2-content-panel" class="panel panel-default" style="color: black; margin-top:14vh; margin-left: 90vh; width: 45vw; padding: 5vh 5vh">
+                                <p>
+                                    <br>“First, which is the most important, I’ve made an appointment with the hospital to find out if I can undergo nerve bypass surgery next month. If possible and the cost uncovered by the national health insurance is affordable, I might be able to stand on my feet again. I don’t expect to run around like you guys do.  
+<strong style=" background: rgba(239, 184, 65, 0.5)">Standing up and walking will do</strong>,” revealed Mr. Chiu.
+                                    <br>
+                                    <br>“As for my second wish, I hope my daughter can keep talking to me and have a meal with me during the new year’s break. That’s all,” exhaled Mr. Chiu, failing to conceal his jittery feeling. But he quickly shrugged his shoulders and beamed: 
+
+                                    <br>
+                                    <br>“Last but not least, I hope to be safe out peddling and bring in more business. These are my wishes. ”
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 這邊可以再插ㄍ什麼東西 -->
+        <div id="chapter2-end" class="text-center">
+            <div class="container-fluid">
+                <div style="height: 100vh"></div>
+                <div class="container-fluid" style="height: 100vh; padding: 20% 20%">
+                    <h4><small>Only then did we realize that the ordinary life that we deem plain might be an out-of-reach fantasy for the people with disabilities. </small></h4>
+                    <br><br>
+                    <h4><small>Mr. Chiu left in his wheelchair, slightly unsteady in the chill wind. When he turned to wave goodbye to us with a broad smile, we were certain of one thing: his tortuous journey has rounded off the rigidity and stubbornness in him and brought the best, purest out of him. 
+</small></h4>
+                    <br><br>
+                    <h4><small>Perhaps, the bumpy and potholed path of life abundant with adversity gave him an all-encompassing taste of life. </small></h4>
+                </div>
+            </div>
+        </div>
+        <!-- chapter3 身障者數據-->
+        <div id="chapter3" class="container-fluid" style="background-color: ; min-height: 480vh; padding-right: 7vw">
+            <!-- chapter3的小廢話 -->
+            <div class="container-fluid" style="min-height: 50vh;">
+                <div id="ch-title" class="text-center">
+                    <h1><strong>Data Insight : The Distressing Reality of The Labor Rights of People with Disabilities</strong></h1>
+                </div>
+
+            </div>
+            <!-- chapter3的圖表說明 -->
+            <div class="row" style="min-height: 100vh; padding: 5% 5%;">
+                <div class="col-sm-6">
+                    <div id="ch3-lb-content-panel" class="panel panel-default" style="color:white; padding: 20% ">
+                        <h3 style="margin:0 auto; text-align: left; text-shadow: black 0.1em 0.1em 0.2em;"><strong>Putting food on the table on their own isn’t easy</strong></h3>
+                        <h5>
+                            <br>
+                            <br><small>As Mr. Chiu mentioned above, a great proportion of the people with disabilities fall into the category of “severe conditions” who are incapable of living independently and could hardly secure a job to bring his bacon home, some even unconscious. According to the data provided by the Ministry of Labor, of all categories, “physically disabled” accounts for the majority with more than 360,000 people in Taiwan; yet, only 90,000 people are in the labor force, indicating that those who can earn money on their own like Mr. Chiu only makes up around 23%. 
+                            </small>
+                            <br>
+                            <br><small>Nonetheless, people with physical challenges tops the chart when it comes to employment rate. Groups like dementia and multiple handicapped amass less than 10 percent of the working population. 
+                            </small>
+                            <br>
+                        </h5>
+                    </div>
+                </div>
+                <div id="img" class="col-sm-6 slideanimate" style=" padding-top: 9%;">
+                    <img src="asset-final/label1.png" class="img-fluid slideanimate" alt="Responsive image" style="width:100%; box-shadow: 2px 2px 10px black;">
+                    <p style="text-align: right; color: white">Picture 1: The employment/unemployment rate of the disabled based on categories</p>
+                </div>
+
+            </div>
+
+            <div class="row" style="min-height: 100vh; padding: 5% 5%;">
+                <div class="col-sm-6">
+                    <div id="ch3-lb-content-panel" class="panel panel-default" style="color:white; padding: 20% ">
+                        <h3 style="margin:0 auto; text-align: left; text-shadow: black 0.1em 0.1em 0.2em;"><strong>Reform of the disability category remains futile in the reality</strong></h3>
+                        <h5>
+                            <br>
+                            <br><small>The picture on the right elucidates the current distribution of the disability category in Taiwan. Groups with severe and profound conditions (less than 10 percent of them have the ability to work) contribute to over 25 percent of the entire disabled community,which is  around 310,000 people. 
+
+                            </small>
+                            <br>
+                            <br><small>As stated in the evaluation of the physical and mental disability rating by the Ministry of Health, people with disabilities are evaluated by health facilities based on their conditions and will be rated as mild, moderate, severe, and profound accordingly. The result of the rating will determine the welfare they receive. Mr. Chiu was downgraded from severe to moderate after an evaluation, losing the crucial subsidy even when moving around was still a tall order to him. 
+
+                            </small>
+                            <br>
+                        </h5>
+                    </div>
+                </div>
+                <div id="img" class="col-sm-6 slideanimate" style=" padding-top: 9%;">
+                    <img src="asset-final/label2.jpg" class="img-fluid slideanimate" alt="Responsive image" style="width:100%;box-shadow: 2px 2px 10px black;">
+                    <p style="text-align: right; color: white">Picture 2: The disability category</p>
+                </div>
+
+            </div>
+
+            <div class="row" style="min-height: 100vh; padding-left: 10%">
+                <div id="img" class="col-sm-6 slideanimate" style=" padding-top: 10%;">
+                    <img src="asset-final/label3.jpg" class="img-fluid slideanimate" alt="Responsive image" style="width:100%;box-shadow: 2px 2px 10px black;">
+                    <p style="text-align: right; color: white">Picture 3: A list of companies that fall short of recruiting a certain number of disabled employees</p>
+                </div>
+                <div class="col-sm-6">
+                    <div id="ch3-lb-content-panel" class="panel panel-default" style="color:white; padding: 20% ">
+                        <h3 style="margin:0 auto; text-align: left; text-shadow: black 0.1em 0.1em 0.2em;"><strong>Who fails to hire people with disabilities in breach of the law? 
+</strong></h3>
+                        <h5>
+                            <br>
+                            <br><small>The picture on the left shows the companies that weren't up to par in hiring sufficient employees with disabilities under Article 38 of the Person with Disabilities Rights Protection Act. YAHOO! comes in last place in recruiting employees among all companies: it has only one employee with challenges when the law stipulates the company to hire ten. 
+
+                            </small>
+                            <br>
+                            <br><small>Besides YAHOO!, many Who’s Who of companies also hit the notorious list, among which up to 24 businesses or institutions see a shortage of at least 5 employees with disabilities. 
+                            </small>
+                            <br>
+                        </h5>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row" style="min-height: 100vh; padding-left: 10%">
+                <div id="img" class="col-sm-6 slideanimate" style=" padding-top: 9%;padding-bottom: 20%;">
+                    <img src="asset-final/label4.png" class="img-fluid slideanimate" alt="Responsive image" style="width:100%;box-shadow: 2px 2px 10px black;">
+                    <p style="text-align: right; color: white">Picture 4: The cause of disabilities among the physically and mentally challenged people in Taipei City over the years</p>
+                </div>
+                <div class="col-sm-6">
+                    <div id="ch3-lb-content-panel" class="panel panel-default" style="color:white; padding: 20% ">
+                        <h3 style="margin:0 auto; text-align: left; text-shadow: black 0.1em 0.1em 0.2em;"><strong>Over half of the physically and mentally challenged people were afflicted by the acquired disabilities
+</strong></h3>
+                        <h5>
+                            <br>
+                            <br><small>During the interviews, it came to light that a slew of challenged people develop disabilities during their lifetime due to disease or accidents, forcing them to learn to adapt.
+
+                            </small>
+                            <br>
+                            <br><small>The graph on the left exhibits the cause of disabilities in Taipei City over the years. Over half of the physically or mentally challenged people acquired disabilities from diseases, followed by congenital factors. For the former, learning how to accept the disabilities and cultivate skills to seek employment can be a tough grind. It also poses enormous challenges for families to collect nursing expenditure. 
+
+                            </small>
+                            <br>
+                        </h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- chapter4 結構的牢籠 -->
+        <div id="chapter4" class="container-fluid" style="background-color: #252627; min-height: 300vh;">
+            <div class="container" style=" padding-top: 3%">
+                <div id="ch-title" class="text-center" style="margin-bottom: 25%;">
+                    <h1><strong>The prison embedded in the social structure: the laws, regulations and social dilemmas</strong></h1>
+                </div>
+                <div id="ch3-content" class="ch3-content text-center">
+                    <h3 style="text-shadow: black 0.1em 0.1em 0.2em;"><strong>Dilemma One: Labor rights of the disabled are neglected
+</strong></h3>
+                    <div style="text-align: left">
+                    <br>
+                    <br>
+                    <br>
+                    <p>&emsp;&emsp;The labor rights of the challenged people are mainly protected by Article 4 of the Person with Disabilities Rights Protection Act. Nevertheless, as Mr. Chiu mentioned in the interview, some shelter factories do not have barrier-free facilities, which can deter the disabled from getting the job. Moreover, factors such as income and out-of-pocket transportation costs have to be taken into account as well. The current system is in need of transformation.
+
+                    </p>
+                    <br>
+                    <br>
+                    <p>&emsp;&emsp;Although the law explicitly demands employers to hire a certain number of people with disabilities, it turns out to be futile. For instance, according to Article 38 of the Person with Disabilities Rights Protection Act, private sectors whose total employees exceed 67 people shall hire no less than 1 percent of the total employment of people with disabilities. Yet, an avalanche of companies are reluctant to recruit them. Instead, employers rather pay the difference subsidies to make up for the gap in recruiting sufficient numbers of challenged employees, which is an easier way out. Hence, securing a stable job tends to be challenging for this minority group of people.
+</p>
+                    <br>
+                    <br>
+                    <br>
+                    <p>&emsp;&emsp;<strong style=" color: black; background: rgba(239, 184, 65, 1)">The law has been amended on a consistent basis as a safeguard for people with disabilities, but owning a “disability card” is the prerequisite for receiving the benefits. In other words, those in need are required to pass all the evaluation procedures to be classified into an assigned category before they are eligible to apply for subsidies and services.
+</strong></p>
+                    <br>
+                    <br>
+                    <br>
+                    <p>&emsp;&emsp;<strong style=" color: black; background: rgba(239, 184, 65, 1)">As a result, what kinds of “conditions” are regarded as disabilities determine whether a person is qualified to claim social welfare and the vetting standard usually goes hand in hand with the distribution of resources.</strong>（周月清、朱貽莊，2011）Other than one’s disabilities, physically and mentally challenged people are bound to undergo an array of challenges and struggles on their path to return to work. Therefore, how to materialize the purpose of regulations is an ardent hope for nearly 1.2 million people with disabilities nationwide. 
+</p></div>
+                </div>
+
+                <div id="ch3-content" class="ch3-content text-center">
+                    <h3 style="text-shadow: black 0.1em 0.1em 0.2em;"><strong>Dilemma Two: The dream for barrier-free cities remains unattainable
+</strong></h3>
+                     <div style="text-align: left">
+                    <br>
+                    <br>
+                    <br>
+                    <p>&emsp;&emsp;<strong style=" color: black; background: rgba(239, 184, 65, 1)">It is, in essence, a violation of human rights when a society hermetically puts people with disabilities into education and nursing institutes or deprives them of their rights to be part of the community by the absence of barrier-free facilities. The definition of barriers is in a state of flux under different societies, historic contexts and cultures.</strong>
+                        （張恆豪、顏詩耕，2011）It seems to be baffling for us to understand the hardship faced by those with disabilities, but the shoe might be on the other foot overnight. As a consequence, the provision of barrier-free access is not only the rights for the disabled but also the nation’s duty.  
+</p>
+                    <br>
+                    <br>
+                    <p>&emsp;&emsp;In Taiwaw, cities that have mature urban development are well equipped with barrier-free facilities, but other cities, towns and villages on a smaller scale are unfriendly to people with disabilities. This seemingly puny detail often significantly affects one’s decision in means of transportation, routes, and even career outlook. <strong style=" color: black; background: rgba(239, 184, 65, 1)">障礙者權利的觀點認為，參與社會生活、擁有一定的生活品質是人權，而不是國家的慈善施捨。</strong>（周月清、朱貽莊，2011）The central government should actively set up regulations to urge local government’s action to beef up barrier-free facilities. 
+</p>
+                    </div>
+                </div>
+
+                <div id="ch3-content" class="ch3-content text-center">
+                    <h3 style="color: white; text-shadow:  black 0.1em 0.1em 0.2em;"><strong>Dilemma Three: Discrimination and misunderstanding among the society
+</strong></h3>
+                     <div style="text-align: left;">
+                    <br>
+                    <br>
+                    <br>
+                    <p>&emsp;&emsp;No matter how perfect the barrier-free facilities are or how comprehensive the regulations and social welfare are, if a country lacks an empathetic ear to the challenged people, the thick wall between this minority group and the public remains unbreakable, rendering the people with disabilities holding the short end of the stick. 
+
+                    </p>
+                    <br>
+                    <br>
+                    <p>&emsp;&emsp;Despite that issues and discussions related to people with disabilities have been circulated and promoted for decades, many people still look at them with misunderstanding or even discrimination, corrobarated by Mr. Chiu’s personal experience. Tackling unemployment problems, relying on others’ care and handing out stratospheric medical expenses are the daily routine of people with disabilities, which can be an intolerable burden for their families that tears them apart. What’s worse, past frauds that take advantage of people’s empathy toward the challenged people have long stigmatized people with disabilities as well. </p>
+                    <br>
+                    <br>
+                    <br>
+                    <p>&emsp;&emsp;<strong style=" color: black; background: rgba(239, 184, 65, 1)">However, disability should be considered a divergence between humankind, not a defect. Based on the premise, we have to delve into different needs of each person with disability and one’s family to offer support from the perspective of individual rights. Moreover, the government should address the justice and allocation of social welfare and practice the principle of normalization and universalizability. 
+</strong>（周月清、朱貽莊，2011）Only by unraveling the public’s misunderstanding and discrimination against the people with disabilities could the social structure be shaken up to create a friendly environment. </p>
+                </div>
+                </div>
+            </div>
+            <div class="ch3-content text-left" style="color: aliceblue; height: 100vh; padding-top: 20%; padding-left: 23%; padding-right: 7%">
+                <strong>
+                    <h5>Regaining his feet, reuniting with his beloved family and leading a stable life were Mr. Chiu’s three wishes.</h5>
+                    <br>
+                    <br>
+                    <h5>Although Mr. Chiu bears a strong resemblance to the Sisyphus of Greek mythology, who was forced to roll an immense boulder up a hill painstakingly day after day.</h5>
+                    <br>
+                    <br>
+                    <h5>Yet, seeing the gleam in his eyes, we are convinced that if the public rallies behind the government, the curse and all the hurdles can be overcome one day. 
+</h5>
+                </strong>
+            </div>
+            
+            <div style="height: 70vh"></div>
+        </div>
+        <!-- footer -->
+        <div id="footer" class="row" style="background-color:black; min-height: 40vh; padding: 10vh 15vw">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-6 align-self-center">
+                <p1 style="font-size:16px;text-align: center; color: aliceblue;"><br><br>Web：Shih-Min Huang, Chen-Yu Yang<br><br>Interview & Words：Shih-Min Huang<br><br>Data Analysis & Visualization：Pin-Ju Chen, Shih-Min Huang<br><br>Photo：Pin-Ju Chen<br><br>Art & Design：Pin-Ju Chen<br><br></p1>
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+    <!--<script>
+        //intro照片刷淡
+        $(window).scroll(function() {
+            var intro_pos = $("#intro").offset().top; //intro黎最頂多遠
+            var winh = $(window).height(); //視窗高度
+            var intro_scrolled = winh - intro_pos; //在intro內捲了多少
+            $(".opa").each(function() {
+                var opRange = $(this).parent().height() / 5;
+                $(this).css({
+                    "opacity": ($(this).data("seq") * opRange - intro_scrolled) / opRange
+                });
+            });
+        });
+
+    </script>-->
+    <script>
+        //#intro bg淡入淡出
+        $(window).scroll(function() {
+            var scrolled = $(document).scrollTop();
+            var scroll = $(window).scrollTop(); //捲動多少
+            var intro_pos = $("#intro").offset().top; //#intro現在的位置
+            var intro_height = $("#intro").height(); //#intro的高度
+            var intro_scrolled = scroll - intro_pos;
+            var winh = $(window).height();
+            if (intro_scrolled > 0 && intro_scrolled < intro_height) {
+                $(".opa").each(function() {
+                    var opRange = intro_height / 3;
+                    console.log(opRange);
+                    $(this).css({
+                        "opacity": 0.5 + ($(this).data("seq") * opRange - scrolled) / opRange
+                    });
+                });
+            }
+        });
+        
+    </script>
+    
+    <script>
+        //#chapter2 的進度條 statusbar
+        $(window).scroll(function() {
+            var chapter2_pos = $("#chapter2").offset().top; //#chapter1現在的位置
+            var chapter2_height = $("#chapter2").height(); //#chapter1的高度
+            var max_scroll = chapter2_height - $(window).height(); //最大可捲距離＝#chapter1高度－視窗高度
+            var window_width = $(window).width(); //視窗寬度
+            var scroll = $(window).scrollTop(); //捲動多少
+            var chapter2_scrolled = scroll - chapter2_pos;
+            //在#chapter1裡面被捲動的距離＝最大可捲距離－ #chapter1現在的位置(希望他可以跑到最上面開始動)
+            var new_width = window_width * chapter2_scrolled / max_scroll;
+            //statusbar的新寬度＝視窗寬度＊捲動多少／最大可捲距離
+            if (chapter2_scrolled > 0 && chapter2_scrolled < chapter2_height) {
+                $('#statusbar').css({
+                    'width': new_width
+                });
+            }
+        });
+    </script>
+    <script>
+        //#chapter2橫向捲軸
+        $(window).scroll(function() {
+            var current_pos = $(document).scrollTop(); //滑動了整個頁面多少
+            var winw = $(window).width(); //螢幕寬度
+            var chapter2_height = $("#chapter2").height(); //#chapter1的高度
+            var chapter2_pos = $("#chapter2").offset().top; //#chapter1現在的位置
+            console.log(current_pos + "/" + chapter2_pos);
+            if (current_pos > chapter2_pos && current_pos <= chapter2_pos + chapter2_height) {
+                update_left = (-1) * ($("#horizontal").width() - winw) * (current_pos - chapter2_pos) / chapter2_height;
+                console.log(update_left);
+                $("#horizontal").css("left", update_left);
+            }
+        });
+    </script>
+
+    <script>
+        //往右滑的slideanimation
+        $(function() {
+            $(window).scroll(function() {
+                $(".slideanimate-2").each(function() {
+                    var pos = $(this).offset().top;
+                    var winTop = $(window).scrollTop();
+                    var winh = $(window).height();
+                    if (pos - winh / 2 < winTop) {
+                        $(this).addClass("slide-2");
+                    }
+                });
+            });
+        });
+    </script>
+
+    <script>
+        //往上滑的slideanimation
+        $(function() {
+            $(window).scroll(function() {
+                $(".slideanimate").each(function() {
+                    var pos = $(this).offset().top;
+                    var winTop = $(window).scrollTop();
+                    var winh = $(window).height();
+                    if (pos - winh / 2 < winTop) {
+                        $(this).addClass("slide");
+                    }
+                });
+            });
+        });
+    </script>
+
+</body></html>
